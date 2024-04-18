@@ -1,0 +1,95 @@
+.NoshibariArtPages {
+
+  .Page {
+
+    margin: 0 0 $space * 3 0;
+
+    position: relative;
+
+    .Thumb {
+
+      position: relative;
+    }
+
+    .Title {
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: fit-content;
+      transform: translate(-50%, -50%);
+      background-color: $color-light-transparent;
+      padding: $space $space * 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .dashicons-lock {
+
+        color: var(--ast-global-color-0);
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.wp-block-group.InsideFullWidth {
+
+  padding: 0 !important;
+
+  .wp-block-group__inner-container {
+
+    width: 100%;
+
+    > div {
+
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+.entry-content > .wp-block-group, 
+.entry-content > .wp-block-media-text, 
+.entry-content > .wp-block-cover, 
+.entry-content > .wp-block-columns {
+  
+    width: 100%;    
+}
+
+.wp-block-group.Separador {
+
+  padding: 0;
+
+  .wp-block-separator {
+
+    margin-bottom: 0;
+  }
+}
+
+.wp-block-group.VideoList {
+  
+  justify-content: center;
+
+  figure.wp-block-video {
+
+    width: 100%;
+
+    @media(min-width: 480px) {
+
+      width: 47%;
+    }
+
+    @media(min-width: 900px) {
+
+      width: 30%;
+    }
+
+    @media(min-width: 1200px) {
+
+      width: 25%;
+    }
+  }
+}
