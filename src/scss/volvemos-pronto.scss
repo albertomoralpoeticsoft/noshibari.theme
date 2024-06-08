@@ -1,0 +1,41 @@
+html {
+
+  height: 100%;
+}
+
+body.volvemos-pronto {
+
+  height: 100%;
+  overflow: hidden;
+
+  #page,
+  #content,
+  .ast-container,
+  #primary,
+  #main,
+  article.page,
+  .entry-content,
+  .wp-block-cover {
+
+    @include absolutebox();
+  }
+
+  @media (min-width: 922px) {
+
+    .ast-container {
+        
+      max-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+
+    #primary {
+
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+}

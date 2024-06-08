@@ -1,0 +1,70 @@
+html.canva,
+body.canva {
+
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body.canva {
+
+  #page,
+  #content,
+  #primary,
+  .ast-container,
+  #main,
+  article,
+  .entry-content,
+  .wp-block-cover,
+  .wp-block-cover__inner-container,
+  .shortcode.canvasite { 
+
+    @include absolutebox();
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #content {
+
+    z-index: 0;
+  }
+
+  .ast-container {
+
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: 922px) {
+
+      max-width: 100%;
+    }
+  }
+
+  .wp-block-cover__inner-container {
+
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .shortcode.canvasite { 
+
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  iframe {
+
+    width: 100%;
+    height: 100%;
+  }
+
+  #colophon{
+
+    @include absolutebox();
+    top: auto;
+    z-index: 1;
+  }
+}
+

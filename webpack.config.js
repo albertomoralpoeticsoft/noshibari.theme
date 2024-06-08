@@ -9,7 +9,7 @@ module.exports = env => {
   const paths ={
     entryjs: './src/app/main.js',
     entryscss: './src/scss/main.scss',
-    output: __dirname + '/astra-child-noshibari',
+    output: __dirname + '/astra-child-noshibari/js-css',
     public: '/wp-content/themes/astra-child-noshibari',
     cssfilename: 'main.css'
   }

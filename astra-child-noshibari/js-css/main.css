@@ -1,0 +1,161 @@
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
+  \*************************************************************************************************************/
+/**
+Theme Name: Astra Child Noshibari
+Author: Alberto Moral
+Author URI: https://noshibari.com/about
+Description: Astra child theme for Noshibari / Art
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: astra-child-noshibari
+Template: astra
+*/
+html {
+  height: 100%;
+}
+
+body.volvemos-pronto {
+  height: 100%;
+  overflow: hidden;
+}
+body.volvemos-pronto #page,
+body.volvemos-pronto #content,
+body.volvemos-pronto .ast-container,
+body.volvemos-pronto #primary,
+body.volvemos-pronto #main,
+body.volvemos-pronto article.page,
+body.volvemos-pronto .entry-content,
+body.volvemos-pronto .wp-block-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@media (min-width: 922px) {
+  body.volvemos-pronto .ast-container {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (min-width: 1200px) {
+  body.volvemos-pronto #primary {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+.ps-visual {
+  transition-delay: 0;
+}
+.ps-visual.ps-delay-10 {
+  transition-delay: 0.1s;
+}
+.ps-visual.ps-delay-20 {
+  transition-delay: 0.2s;
+}
+.ps-visual.ps-delay-30 {
+  transition-delay: 0.3s;
+}
+.ps-visual.ps-delay-40 {
+  transition-delay: 0.4s;
+}
+.ps-visual.ps-delay-50 {
+  transition-delay: 0.5s;
+}
+.ps-visual.ps-left-zoom {
+  opacity: 0;
+  transform: translateX(-30%) scale(0.9);
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+.ps-visual.ps-left-zoom.ps-in-viewport {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.ps-hover.ps-scale {
+  transform: scale(1);
+  transition-delay: 0;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.ps-hover.ps-scale:hover {
+  transform: scale(1.1);
+}
+
+.wp-block-button {
+  transform: scale(1);
+  transition-delay: 0;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.wp-block-button:hover:not(:disabled) {
+  transform: scale(1.2);
+}
+
+.shortcode.subscribe {
+  max-width: 400px;
+  margin-left: 0 !important;
+}
+.shortcode.subscribe form {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.shortcode.subscribe form .field {
+  flex: 1;
+}
+.shortcode.subscribe form .field input {
+  padding: 8px;
+  border-radius: 4px;
+  height: 36px;
+}
+.shortcode.subscribe form .field input:valid {
+  border: solid 2px rgb(0, 158, 8);
+}
+.shortcode.subscribe form .field input:invalid:required {
+  border: solid 2px rgb(158, 11, 0);
+}
+.shortcode.subscribe form .field label {
+  display: block;
+  margin: 8px 0 0 0;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.shortcode.subscribe form .field label.error {
+  color: rgb(158, 11, 0);
+}
+.shortcode.subscribe form .wp-block-button {
+  cursor: pointer;
+}
+.shortcode.subscribe form .wp-block-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.shortcode.subscribe .message {
+  display: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.shortcode.subscribe .message.success {
+  color: rgb(0, 158, 8);
+}
+.shortcode.subscribe .message.error {
+  color: rgb(158, 11, 0);
+}
+.shortcode.subscribe .message.warning {
+  color: rgb(202, 107, 18);
+}
+
+/*# sourceMappingURL=main.css.map*/

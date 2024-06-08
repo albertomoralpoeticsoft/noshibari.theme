@@ -1,0 +1,73 @@
+.shortcode.subscribe {
+
+  max-width: 400px;
+  margin-left: 0 !important;   
+
+  form {
+
+    display: flex;
+    align-items: flex-start;
+    gap: $space;
+
+    .field {
+
+      flex: 1;
+
+      input {
+
+        padding: $space;
+        border-radius: $space * 0.5;
+        height: $space * 4.5;
+
+        &:valid {
+
+          border: solid 2px $color-success;
+        }
+
+        &:invalid:required {
+
+          border: solid 2px $color-error;
+        }
+      }
+
+      label {
+
+        display: block;;
+        margin: $space 0 0 0;
+        padding: $space $space * 2;
+        border-radius: $space * 0.5;
+        background-color: $color-light;
+        box-shadow: 0 0 4px $color-dark-transparent-a;
+
+        &.error {
+
+          color: $color-error;
+        }
+      }
+    }
+
+    .wp-block-button {
+
+      cursor: pointer;
+
+      &:disabled {
+
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .message {
+
+    display: none;
+    padding: $space $space * 2;
+    border-radius: $space * 0.5;
+    background-color: $color-light;
+    box-shadow: 0 0 4px $color-dark-transparent-a;
+
+    &.success { color: $color-success; }
+    &.error { color: $color-error; }
+    &.warning { color: $color-warning; }
+  }
+}

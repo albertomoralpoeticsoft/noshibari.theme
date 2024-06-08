@@ -8,6 +8,63 @@
  * @since 1.0.0
  */
 
+ require_once(dirname(__FILE__) . '/cleanhead.php');
+ require_once(dirname(__FILE__) . '/shortcodes/main.php');   
+ require_once(dirname(__FILE__) . '/api/main.php');
+
+/**
+* In construction
+*/
+
+global $post;
+
+add_action(
+  'template_redirect', 
+  function () use ($post){
+
+    if(
+      !is_user_logged_in()
+      &&
+      !has_category('allow-in-construction', $post->ID)
+    ) {
+
+      wp_redirect('/volvemos-pronto'); 
+      exit;
+    }
+  }
+); 
+
+/**
+* Init
+*/
+
+add_action( 
+  'init', 
+  function () {
+
+    /**
+      * Categories for pages
+      */  
+
+    register_taxonomy_for_object_type( 
+      'category', 
+      'page' 
+    );
+  }
+); 
+
+add_filter(
+  'body_class',
+  function($classnames) {    
+
+    if(is_page('volvemos-pronto')) {
+      
+      $classnames[] = 'volvemos-pronto';
+    }
+
+    return $classnames;
+});
+
 /**
  * Analytics
  */ 
@@ -39,21 +96,34 @@ add_action(
     wp_enqueue_style('dashicons');
 
     wp_enqueue_script(
+      'astra-child-noshibari-theme-jquery-validate-js', 
+      get_stylesheet_directory_uri() . '/js-css/jquery.validate.min.js',
+      array(
+        'jquery',
+        'jquery-form'
+      ), 
+      filemtime(get_stylesheet_directory() . '/js-css/jquery.validate.min.js'),
+      true
+    );
+
+    wp_enqueue_script(
       'astra-child-noshibari-theme-js', 
-      get_stylesheet_directory_uri() . '/main.js',
-      array('jquery'), 
-      filemtime(get_stylesheet_directory() . '/main.js'),
+      get_stylesheet_directory_uri() . '/js-css/main.js',
+      array(
+        'astra-child-noshibari-theme-jquery-validate-js'
+      ), 
+      filemtime(get_stylesheet_directory() . '/js-css/main.js'),
       true
     );
 
 		wp_enqueue_style( 
 			'astra-child-noshibari-theme-css',
-			get_stylesheet_directory_uri() . '/main.css', 
+			get_stylesheet_directory_uri() . '/js-css/main.css', 
 			array(
         'astra-theme-css',
         'dashicons'
       ), 
-			filemtime(get_stylesheet_directory() . '/main.css'),
+			filemtime(get_stylesheet_directory() . '/js-css/main.css'),
 			'all' 
 		);
 	}, 
@@ -68,9 +138,9 @@ add_action(
     
     wp_enqueue_style(
       'astra-child-noshibari-theme-admin-styles', 
-      get_stylesheet_directory_uri() . '/admin.css',
+      get_stylesheet_directory_uri() . '/js-css/admin.css',
       array(),
-      filemtime(get_stylesheet_directory() . '/admin.css')
+      filemtime(get_stylesheet_directory() . '/js-css/admin.css')
     );
   }
 );
