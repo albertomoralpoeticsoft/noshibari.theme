@@ -1,4 +1,3 @@
-
 export default $ => {
 
   const $subscribe = $('.shortcode.subscribe')

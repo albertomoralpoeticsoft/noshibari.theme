@@ -158,4 +158,54 @@ body.volvemos-pronto .wp-block-cover {
   color: rgb(202, 107, 18);
 }
 
+.wp-block-gallery.slider {
+  height: 50vh;
+  position: relative;
+  margin-bottom: 0;
+}
+.wp-block-gallery.slider .flickity-viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.wp-block-gallery.slider .flickity-viewport .wp-block-image {
+  width: 100% !important; /* full width */
+  height: 100%;
+  margin-right: 10px;
+}
+.wp-block-gallery.slider .flickity-viewport .wp-block-image figcaption {
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transform: translateY(100%);
+}
+.wp-block-gallery.slider .flickity-viewport .wp-block-image:hover figcaption {
+  transform: translateY(0);
+}
+
+.wp-block-group.slider {
+  position: relative;
+  margin-bottom: 0;
+}
+.wp-block-group.slider .flickity-viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100% !important;
+}
+.wp-block-group.slider .flickity-viewport .wp-block-cover {
+  width: 100% !important; /* full width */
+  height: 100%;
+}
+.wp-block-group.slider .flickity-viewport .wp-block-cover .wp-block-cover__inner-container > * {
+  width: fit-content;
+  margin: 8px auto;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 1em;
+}
+
 /*# sourceMappingURL=main.css.map*/

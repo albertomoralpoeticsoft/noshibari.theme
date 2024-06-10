@@ -1,6 +1,81 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/app/flickitygallery.js":
+/*!************************************!*\
+  !*** ./src/app/flickitygallery.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// https://github.com/metafizzy/flickity
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function ($) {
+  var $slidergallery = $('.wp-block-gallery.slider');
+
+  if ($slidergallery.length) {
+    $slidergallery.each(function () {
+      var $this = $(this);
+      $this.flickity({
+        autoPlay: true,
+        prevNextButtons: false,
+        wrapAround: true,
+        pageDots: false
+      });
+      window.addEventListener('resize', function () {
+        $this.flickity('resize');
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./src/app/flickityhero.js":
+/*!*********************************!*\
+  !*** ./src/app/flickityhero.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// https://github.com/metafizzy/flickity
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function ($) {
+  var $sliderhero = $('.wp-block-group.slider .wp-block-group__inner-container');
+
+  if (!$sliderhero.length) {
+    $sliderhero = $('.wp-block-group.slider');
+  }
+
+  if ($sliderhero.length) {
+    $sliderhero.each(function () {
+      var $this = $(this);
+      $this.flickity({
+        autoPlay: false,
+        prevNextButtons: false,
+        wrapAround: true,
+        pageDots: false,
+        friction: 0.5
+      });
+      window.addEventListener('resize', function () {
+        $this.flickity('resize');
+      });
+      return;
+      setInterval(function () {
+        $this.flickity('next', true, false);
+      }, 6000);
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./src/app/inviewport.js":
 /*!*******************************!*\
   !*** ./src/app/inviewport.js ***!
@@ -65,7 +140,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inviewport__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inviewport */ "./src/app/inviewport.js");
 /* harmony import */ var _subscribe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./subscribe */ "./src/app/subscribe.js");
+/* harmony import */ var _flickitygallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flickitygallery */ "./src/app/flickitygallery.js");
+/* harmony import */ var _flickityhero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flickityhero */ "./src/app/flickityhero.js");
 // import canva from './canva'
+
+
 
 
 
@@ -73,6 +152,8 @@ __webpack_require__.r(__webpack_exports__);
   // canva($)
   (0,_inviewport__WEBPACK_IMPORTED_MODULE_0__["default"])($);
   (0,_subscribe__WEBPACK_IMPORTED_MODULE_1__["default"])($);
+  (0,_flickitygallery__WEBPACK_IMPORTED_MODULE_2__["default"])($);
+  (0,_flickityhero__WEBPACK_IMPORTED_MODULE_3__["default"])($);
 })(jQuery);
 
 /***/ }),

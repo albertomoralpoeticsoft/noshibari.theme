@@ -1,0 +1,29 @@
+.wp-block-group.slider {
+
+  position: relative;
+  margin-bottom: 0;
+
+  .flickity-viewport {
+
+    @include absolutebox();
+    max-width: 100% !important;
+
+    .wp-block-cover {
+
+      width: 100% !important; /* full width */
+      height: 100%;     
+
+      .wp-block-cover__inner-container {
+
+        > * {
+
+          width: fit-content;
+          margin: $space  auto;
+          padding: $space;
+          background-color: $color-dark-transparent-a;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+}

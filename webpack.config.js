@@ -4,13 +4,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const LiveReloadPlugin = require('webpack-livereload-plugin')
 const PolyfillInjectorPlugin = require('webpack-polyfill-injector')
 
+const themename = 'astra-child-noshibari'
+const destdir = path.join(__dirname, themename)
+const themeplublic = '/wp-content/themes/' + themename
+
 module.exports = env => { 
 
   const paths ={
     entryjs: './src/app/main.js',
     entryscss: './src/scss/main.scss',
-    output: __dirname + '/astra-child-noshibari/js-css',
-    public: '/wp-content/themes/astra-child-noshibari',
+    output: destdir  + '/js-css',
+    public: themeplublic,
     cssfilename: 'main.css'
   }
 
@@ -73,6 +77,18 @@ module.exports = env => {
             'style-loader',
             'css-loader'
           ]
+        },
+        // Assets
+        {
+          test: /\.(jpg|jpeg|png|gif|svg|woff|ttf|eot|mp3)$/,
+          type: 'asset/resource',
+          generator: {
+            emit: false,
+            filename: content => { 
+
+              return content.filename.replace(themename, '')
+            }
+          }
         }
       ]
     },
@@ -104,7 +120,10 @@ module.exports = env => {
       })
     ],
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx'],
+      alias: {
+        assets: path.join(destdir, 'assets')
+      }
     }
   }
 }
