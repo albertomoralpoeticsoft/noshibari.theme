@@ -12,6 +12,23 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astra-child-noshibari
 Template: astra
 */
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  margin-bottom: 0.4em;
+}
+
+a {
+  font-weight: 900;
+}
+
+.menu-item a {
+  font-weight: 100;
+}
+
 html {
   height: 100%;
 }
@@ -187,6 +204,7 @@ body.volvemos-pronto .wp-block-cover {
 .wp-block-group.slider {
   position: relative;
   margin-bottom: 0;
+  overflow: hidden;
 }
 .wp-block-group.slider .flickity-viewport {
   position: absolute;
@@ -206,6 +224,13 @@ body.volvemos-pronto .wp-block-cover {
   padding: 8px;
   background-color: rgba(0, 0, 0, 0.5);
   line-height: 1em;
+}
+
+.wp-block-query .wp-block-post-template {
+  margin-left: 0;
+}
+.wp-block-query .wp-block-post-template .wp-block-post .wp-block-group {
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map*/

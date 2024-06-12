@@ -24,6 +24,7 @@ $sanitizedtitle = sanitize_title(remove_accents($post->post_title));
 <head>
 <?php astra_head_top(); ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta data="<?php $sanitizedtitle ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php 
 if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
