@@ -87,7 +87,26 @@ add_action(
       </script>
     <?php
   }
-);  
+);   
+
+/**
+ * Admin enqueue
+ */
+
+add_action( 
+	'admin_enqueue_scripts', 
+	function () {
+
+    wp_enqueue_script(
+      'astra-child-noshibari-theme-admin-js', 
+      get_stylesheet_directory_uri() . '/js-css/admin.js',
+      array('jquery'), 
+      filemtime(get_stylesheet_directory() . '/js-css/admin.js'),
+      true
+    );
+	}, 
+	999 
+);
 
 /**
  * Enqueue styles
@@ -220,6 +239,27 @@ add_filter(
   }, 
   10, 
   2 
+);
+
+/* Query loop */
+
+
+add_action(
+  'pre_get_posts',
+  function ( $query ) {
+    
+    if (
+      !is_admin() 
+      && 
+      $query->is_main_query() 
+      && 
+      is_post_type_archive( 'page' 
+    ) ) {
+            
+      $query->set('orderby', 'menu_order');
+      $query->set('order', 'ASC'); 
+    }
+  }
 );
  
 

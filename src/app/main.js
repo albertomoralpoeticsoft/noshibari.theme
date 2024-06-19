@@ -3,6 +3,7 @@ import inviewport from './inviewport'
 import subscribe from './subscribe'
 import flickitygallery from './flickitygallery'
 import flickityhero from './flickityhero'
+import queryslider from './queryslider'
 
 (function($) {
 
@@ -11,5 +12,6 @@ import flickityhero from './flickityhero'
   subscribe($)
   flickitygallery($)
   flickityhero($)
+  queryslider($)
 
 })(jQuery)

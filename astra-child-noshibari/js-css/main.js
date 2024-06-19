@@ -146,7 +146,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _subscribe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./subscribe */ "./src/app/subscribe.js");
 /* harmony import */ var _flickitygallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flickitygallery */ "./src/app/flickitygallery.js");
 /* harmony import */ var _flickityhero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flickityhero */ "./src/app/flickityhero.js");
+/* harmony import */ var _queryslider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./queryslider */ "./src/app/queryslider.js");
 // import canva from './canva'
+
 
 
 
@@ -158,7 +160,52 @@ __webpack_require__.r(__webpack_exports__);
   (0,_subscribe__WEBPACK_IMPORTED_MODULE_1__["default"])($);
   (0,_flickitygallery__WEBPACK_IMPORTED_MODULE_2__["default"])($);
   (0,_flickityhero__WEBPACK_IMPORTED_MODULE_3__["default"])($);
+  (0,_queryslider__WEBPACK_IMPORTED_MODULE_4__["default"])($);
 })(jQuery);
+
+/***/ }),
+
+/***/ "./src/app/queryslider.js":
+/*!********************************!*\
+  !*** ./src/app/queryslider.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// https://github.com/metafizzy/flickity
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function ($) {
+  var $sliderquery = $('.wp-block-query.slider');
+
+  if ($sliderquery.length) {
+    $sliderquery.each(function () {
+      var $this = $(this);
+      var $query = $this.find('.wp-block-post-template');
+      $query.flickity({
+        autoPlay: false,
+        prevNextButtons: false,
+        wrapAround: true,
+        pageDots: false,
+        friction: 0.5
+      });
+      window.addEventListener('resize', function () {
+        $query.flickity('resize');
+      });
+
+      if ($this.hasClass('autoplay')) {
+        console.log('autoplay');
+        setInterval(function () {
+          $query.flickity('next', true, false);
+        }, 6000);
+      }
+
+      $query.flickity('resize');
+    });
+  }
+});
 
 /***/ }),
 

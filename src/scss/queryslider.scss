@@ -1,0 +1,30 @@
+.wp-block-query.slider {
+
+  ul.wp-block-post-template {
+
+    .flickity-viewport {
+
+      .flickity-slider {
+
+        .wp-block-post {
+
+          width: 100%;
+
+          .wp-block-group {
+
+            position: absolute;
+            bottom: $space * 4;
+            left: $space * 4;
+            height: auto;
+            max-width: 300px;
+
+            p {
+
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

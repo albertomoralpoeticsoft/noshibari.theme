@@ -235,4 +235,18 @@ body.volvemos-pronto .wp-block-cover {
   height: 100%;
 }
 
+.wp-block-query.slider ul.wp-block-post-template .flickity-viewport .flickity-slider .wp-block-post {
+  width: 100%;
+}
+.wp-block-query.slider ul.wp-block-post-template .flickity-viewport .flickity-slider .wp-block-post .wp-block-group {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  height: auto;
+  max-width: 300px;
+}
+.wp-block-query.slider ul.wp-block-post-template .flickity-viewport .flickity-slider .wp-block-post .wp-block-group p {
+  margin: 0;
+}
+
 /*# sourceMappingURL=main.css.map*/
