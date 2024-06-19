@@ -8,12 +8,13 @@ export default $ => {
 
       const $this = $(this)
       const $form = $this.find('form')
-      const $input = $form.find('input')
+      const $inputemail = $form.find('input#email')
+      const $inputtitle = $form.find('input#title')
       const $button = $form.find('.wp-block-button')
       const $message = $this.find('.message')
-      const messageinvalid = $input.data('message-invalid')
-      const messageerror = $input.data('message-error')
-      const messageok = $input.data('message-ok')
+      const messageinvalid = $inputemail.data('message-invalid')
+      const messageerror = $inputemail.data('message-error')
+      const messageok = $inputemail.data('message-ok')
       
       $form.validate({
         messages: {
@@ -24,7 +25,7 @@ export default $ => {
       });
 
 
-      $input
+      $inputemail
       .on(
         'keyup',
         function() {
@@ -61,7 +62,8 @@ export default $ => {
                 "Content-Type": "application/json"
               },
               body: JSON.stringify({
-                email: $input.val()
+                email: $inputemail.val(),
+                title: $inputtitle.val()
               })
             }
           )

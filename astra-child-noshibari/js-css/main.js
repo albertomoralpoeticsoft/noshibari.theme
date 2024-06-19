@@ -66,10 +66,14 @@ __webpack_require__.r(__webpack_exports__);
       window.addEventListener('resize', function () {
         $this.flickity('resize');
       });
-      return;
-      setInterval(function () {
-        $this.flickity('next', true, false);
-      }, 6000);
+
+      if ($this.hasClass('autoplay')) {
+        setInterval(function () {
+          $this.flickity('next', true, false);
+        }, 6000);
+      }
+
+      $this.flickity('resize');
     });
   }
 });
@@ -176,12 +180,13 @@ __webpack_require__.r(__webpack_exports__);
     $subscribe.each(function () {
       var $this = $(this);
       var $form = $this.find('form');
-      var $input = $form.find('input');
+      var $inputemail = $form.find('input#email');
+      var $inputtitle = $form.find('input#title');
       var $button = $form.find('.wp-block-button');
       var $message = $this.find('.message');
-      var messageinvalid = $input.data('message-invalid');
-      var messageerror = $input.data('message-error');
-      var messageok = $input.data('message-ok');
+      var messageinvalid = $inputemail.data('message-invalid');
+      var messageerror = $inputemail.data('message-error');
+      var messageok = $inputemail.data('message-ok');
       $form.validate({
         messages: {
           email: {
@@ -189,7 +194,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       });
-      $input.on('keyup', function () {
+      $inputemail.on('keyup', function () {
         var $this = $(this);
 
         if ($this.valid()) {
@@ -210,7 +215,8 @@ __webpack_require__.r(__webpack_exports__);
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            email: $input.val()
+            email: $inputemail.val(),
+            title: $inputtitle.val()
           })
         }).then(function (response) {
           $message.removeClass('warning error success');

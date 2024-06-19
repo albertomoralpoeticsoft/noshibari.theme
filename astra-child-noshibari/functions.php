@@ -133,8 +133,7 @@ add_action(
 			'astra-child-noshibari-theme-flickity-css',
 			get_stylesheet_directory_uri() . '/js-css/flickity.css', 
 			array(
-        'astra-theme-css',
-        'dashicons'
+        'astra-theme-css'
       ), 
 			filemtime(get_stylesheet_directory() . '/js-css/flickity.css'),
 			'all' 
@@ -144,7 +143,6 @@ add_action(
 			'astra-child-noshibari-theme-css',
 			get_stylesheet_directory_uri() . '/js-css/main.css', 
 			array(
-        'astra-theme-css',
         'dashicons',
         'astra-child-noshibari-theme-flickity-css'
       ), 

@@ -7,11 +7,12 @@ function noshibari_subscribe( WP_REST_Request $req ) {
   try {
   
     $email = $req->get_param('email');
+    $title = $req->get_param('title');
     
     $mailsent = wp_mail(
       'noshibari@gmail.com',
       'Subscription email',
-      $email
+      $email . ' ' . $title
     );
 
     if(!$mailsent) throw new Exception('Error enviando email', 500);

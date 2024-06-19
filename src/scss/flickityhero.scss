@@ -19,9 +19,10 @@
         > * {
 
           width: fit-content;
+          max-width: 80%;
           margin: $space  auto;
           padding: $space;
-          background-color: $color-dark-transparent-a;
+          background-color: $color-light-transparent-a;
           line-height: 1em;
         }
       }

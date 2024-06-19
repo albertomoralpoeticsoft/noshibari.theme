@@ -26,17 +26,20 @@ export default $ => {
         'resize',
         () => {
 
-          $this.flickity('resize')
+          $this.flickity('resize') 
         }
       )
 
-      return
+      if($this.hasClass('autoplay')) {
 
-      setInterval(() => {
+        setInterval(() => {
 
-        $this.flickity('next', true, false)
+          $this.flickity('next', true, false)
 
-      }, 6000)
+        }, 6000)
+      }
+
+      $this.flickity('resize') 
     })
   }
 }

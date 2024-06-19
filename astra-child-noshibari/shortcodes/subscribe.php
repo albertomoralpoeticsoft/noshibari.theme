@@ -4,6 +4,10 @@ add_shortcode(
   'subscribe',
   function ($atts) {
 
+    global $post;
+
+    $posttitle = $post ? $post->post_title : 'no post';
+
     $sendtext = isset($atts['send']) ?
       $atts['send']
       :
@@ -25,12 +29,19 @@ add_shortcode(
       <form>
         <div class="field">
           <input 
+            id="email"
             name="email"
             type="email"
             data-message-invalid="'. $invalidtext . '" 
             data-message-error="'. $errortext . '"  
             data-message-ok="'. $oktext . '" 
             required 
+          />
+          <input
+            id="title"
+            name="title"
+            type="hidden"
+            value="' . $posttitle . '"
           />
         </div>
         <button 
