@@ -1,6 +1,4 @@
 (function($) { 
-
-  let found = false 
   
   const unsubscribe = wp.data.subscribe(() => {
 

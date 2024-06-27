@@ -2,7 +2,7 @@
 
 export default $ => {
 
-  let $sliderhero = $('.wp-block-group.slider .wp-block-group__inner-container')
+  let $sliderhero = $('.wp-block-group.slider > .wp-block-group__inner-container')
   if(!$sliderhero.length) {
 
     $sliderhero = $('.wp-block-group.slider')

@@ -8,6 +8,20 @@
   &.ps-delay-40 { transition-delay: 0.4s; } 
   &.ps-delay-50 { transition-delay: 0.5s; }
 
+  &.ps-fadein {    
+
+    opacity: 0;
+
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &.ps-in-viewport {
+
+      opacity: 1;
+    }
+  }
+
   &.ps-left-zoom {    
 
     opacity: 0;
@@ -21,6 +35,38 @@
 
       opacity: 1;
       transform:  translateX(0) scale(1);
+    }
+  }
+
+  &.ps-top-zoom {    
+
+    opacity: 0;
+    transform: translateY(-30%) scale(0.9);
+
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &.ps-in-viewport {
+
+      opacity: 1;
+      transform:  translateY(0) scale(1);
+    }
+  }
+
+  &.ps-bottom-zoom {    
+
+    opacity: 0;
+    transform: translateY(30%) scale(0.9);
+
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &.ps-in-viewport {
+
+      opacity: 1;
+      transform:  translateY(0) scale(1);
     }
   }
 }

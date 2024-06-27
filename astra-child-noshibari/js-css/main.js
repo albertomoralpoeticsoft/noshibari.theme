@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // https://github.com/metafizzy/flickity
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function ($) {
-  var $sliderhero = $('.wp-block-group.slider .wp-block-group__inner-container');
+  var $sliderhero = $('.wp-block-group.slider > .wp-block-group__inner-container');
 
   if (!$sliderhero.length) {
     $sliderhero = $('.wp-block-group.slider');

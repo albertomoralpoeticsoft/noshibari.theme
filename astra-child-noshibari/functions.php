@@ -20,6 +20,8 @@ add_filter('login_display_language_dropdown', '__return_false');
 * In construction
 */
 
+/*
+
 global $post;
 
 add_action(
@@ -37,6 +39,8 @@ add_action(
     }
   }
 ); 
+
+*/
 
 /**
 * Init
@@ -100,7 +104,10 @@ add_action(
     wp_enqueue_script(
       'astra-child-noshibari-theme-admin-js', 
       get_stylesheet_directory_uri() . '/js-css/admin.js',
-      array('jquery'), 
+      array(
+        'wp-data',
+        'jquery'
+      ), 
       filemtime(get_stylesheet_directory() . '/js-css/admin.js'),
       true
     );

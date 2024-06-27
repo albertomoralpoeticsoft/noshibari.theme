@@ -83,6 +83,15 @@ body.volvemos-pronto .wp-block-cover {
 .ps-visual.ps-delay-50 {
   transition-delay: 0.5s;
 }
+.ps-visual.ps-fadein {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+.ps-visual.ps-fadein.ps-in-viewport {
+  opacity: 1;
+}
 .ps-visual.ps-left-zoom {
   opacity: 0;
   transform: translateX(-30%) scale(0.9);
@@ -93,6 +102,28 @@ body.volvemos-pronto .wp-block-cover {
 .ps-visual.ps-left-zoom.ps-in-viewport {
   opacity: 1;
   transform: translateX(0) scale(1);
+}
+.ps-visual.ps-top-zoom {
+  opacity: 0;
+  transform: translateY(-30%) scale(0.9);
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+.ps-visual.ps-top-zoom.ps-in-viewport {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.ps-visual.ps-bottom-zoom {
+  opacity: 0;
+  transform: translateY(30%) scale(0.9);
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+.ps-visual.ps-bottom-zoom.ps-in-viewport {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .ps-hover.ps-scale {
@@ -207,7 +238,14 @@ body.volvemos-pronto .wp-block-cover {
   margin-bottom: 0;
   overflow: hidden;
 }
-.wp-block-group.slider .flickity-viewport {
+.wp-block-group.slider > .wp-block-group__inner-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.wp-block-group.slider > .wp-block-group__inner-container .flickity-viewport {
   position: absolute;
   top: 0;
   right: 0;
@@ -215,17 +253,8 @@ body.volvemos-pronto .wp-block-cover {
   left: 0;
   max-width: 100% !important;
 }
-.wp-block-group.slider .flickity-viewport .wp-block-cover {
-  width: 100% !important; /* full width */
-  height: 100%;
-}
-.wp-block-group.slider .flickity-viewport .wp-block-cover .wp-block-cover__inner-container > * {
+.wp-block-group.slider > .wp-block-group__inner-container .flickity-viewport .flickity-slider .wp-block-cover .wp-block-cover__inner-container .wp-block-group {
   width: fit-content;
-  max-width: 80%;
-  margin: 8px auto;
-  padding: 8px;
-  background-color: rgba(255, 255, 255, 0.5);
-  line-height: 1em;
 }
 
 .wp-block-query .wp-block-post-template {
