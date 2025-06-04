@@ -27,21 +27,3 @@ add_action(
   10, 
   1 
 );
-
-/*
-add_action( 
-  'wp_loaded', 
-  function() {
-
-    error_log('wp_loaded');
-
-    $mailsent = wp_mail(
-      'poeticsoft@gmail.com',
-      'Subject',
-      'Body'
-    );
-
-    error_log($mailsent ? 'sent' : 'not sent');
-  }
-);
-*/
